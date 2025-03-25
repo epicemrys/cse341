@@ -6,7 +6,7 @@
     "version": "1.0.0",
     "title": "REST API"
   },
-  "host": "https://cse341-q8gf.onrender.com",
+  "host": "cse341-q8gf.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
