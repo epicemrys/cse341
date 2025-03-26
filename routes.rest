@@ -5,7 +5,7 @@
 
 ##Get Contacts by ID
 
-//GET http://localhost:8080/contacts/67e36130070f2e60a8dc6325
+//GET http://localhost:8080/contacts/67cfb9dccbb49c8d9f835e9f
 
 
 ## Create Contact
@@ -23,17 +23,17 @@
 
 # # PUT contact
 
-# PUT http://localhost:8080/contacts/67e3799131d4c628fa01c0d0/ HTTP/1.1
+# PUT http://localhost:8080/contacts/67e36130070f2e60a8dc6325/ HTTP/1.1
 # Content-Type: application/json
 
 # {
-#     "firstName": "zombie",
-#     "lastName": "zomapeeer",
-#     "email": "zoomm@byupathway.edu",
-#     "favoriteColor": "pink",
-#     "birthday": "09.10.1991"
+#     "firstName": "narrak",
+#     "lastName": "ooobanaa",
+#     "email": "brbama@byupathway.edu",
+#     "favoriteColor": "blue",
+#     "birthday": "09.10.1990"
 # }
 
 ## DELETE contact
 
-//DELETE http://localhost:8080/contacts/67e37689bd2eb54e368a1318
+//DELETE http://localhost:8080/contacts/67e36130070f2e60a8dc6325
