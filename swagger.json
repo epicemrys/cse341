@@ -6,10 +6,10 @@
     "version": "1.0.0",
     "title": "REST API"
   },
-  "host": "cse341-q8gf.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
