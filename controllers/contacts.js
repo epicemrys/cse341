@@ -55,11 +55,9 @@ const createContact = async (req, res) => {
             birthday: req.body.birthday
         };
 
-        // Check if a contact with the same email already exists
         const existingContact = await mongodb.getDatabase().db().collection('contacts').findOne({ email: contact.email });
 
         if (existingContact) {
-            // If the contact exists, you can choose to update it
             const response = await mongodb.getDatabase().db().collection('contacts').updateOne(
                 { email: contact.email },
                 { $set: contact }
@@ -71,7 +69,6 @@ const createContact = async (req, res) => {
                 return res.status(500).json({ message: 'Duplicate already exists.' });
             }
         } else {
-            // If the contact doesn't exist, insert a new one
             const response = await mongodb.getDatabase().db().collection('contacts').insertOne(contact);
 
             if (response.acknowledged) {
@@ -82,8 +79,6 @@ const createContact = async (req, res) => {
         }
     } catch (error) {
         console.error('Error creating contact:', error);
-
-        // General error response
         res.status(500).json({ message: 'An error occurred while creating the contact.', error: error.message });
     }
 };
@@ -117,13 +112,9 @@ const updateContact = async (req, res) => {
         }
     } catch (error) {
         console.error('Error updating contact:', error);
-
-        // Handle invalid ObjectId error
         if (error instanceof mongodb.MongoError && error.code === 121) {
             return res.status(400).json({ message: 'Invalid contact ID format.' });
         }
-
-        // General error response
         res.status(500).json({ message: 'An error occurred while updating the contact.', error: error.message });
     }
 };
@@ -146,13 +137,9 @@ const deleteContact = async (req, res) => {
     } catch (error) {
         console.log(response);
         console.error('Error deleting contact:', error);
-
-        // Handle invalid ObjectId error
         if (error instanceof mongodb.MongoError && error.code === 121) {
             return res.status(400).json({ message: 'Invalid contact ID format.' });
         }
-
-        // General error response
         res.status(500).json({ message: 'An error occurred while deleting the contact.', error: error.message });
     }
 };
